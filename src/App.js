@@ -4,9 +4,13 @@ import './App.css';
 
 function App() {
   return (
-    <div className='main-container'>
-      <Shop />
-      <Cart />
+    <div className='container d-flex'>
+      <div className="col-md-6">
+        <Shop />
+      </div>
+      <div className="col-md-6">
+        <Cart />
+      </div>
     </div>
   );
 }

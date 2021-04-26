@@ -7,9 +7,11 @@ import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 const { Meta } = Card;
 
 const Product = (props) => {
-      const { name, price, img } = props.product;
+      const {addToCart} = props;
+      const { name, price, img,_id } = props.product;
+
       return (
-            <div className="col-sm-3 col-md-3">
+            <div className="col-sm-6 col-md-6">
 
             <Col className="gutter-row p-1 mt-5">
                   <Card
@@ -20,7 +22,7 @@ const Product = (props) => {
                         <Meta title={name} description={price} />
                         <div className="site-button-ghost-wrapper">
 
-                              <Button type="primary" className='mt-3' ghost>
+                              <Button onClick={()=>addToCart(_id, name)} type="primary" className='mt-3' ghost>
                               <FontAwesomeIcon className='mx-1' icon={faCartPlus} />Buy Now
                               </Button>
                         </div>
